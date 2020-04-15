@@ -87,6 +87,11 @@ class Microdata extends AbstractParser
         $this->logger->info('Running parser: '.(new \ReflectionClass(__CLASS__))->getShortName());
         $microdata = $this->parser->parseDom($dom);
 
-        return new ParsingResult(self::FORMAT, $microdata->items);
+        // Ignoring item which does not have type
+        $items = array_filter($microdata->items, function ($item) {
+            return !empty($item->type);
+        });
+
+        return new ParsingResult(self::FORMAT, $items);
     }
 }
