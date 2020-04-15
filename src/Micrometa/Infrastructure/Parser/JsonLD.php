@@ -367,6 +367,9 @@ class JsonLD extends AbstractParser
             $jsonLDDocSource = substr_replace($jsonLDDocSource, '', -1);
         }
 
+        // Trim, replace tabs, line breaks and extra spaces with single spaces:
+        $jsonLDDocSource = preg_replace('/[ ]{2,}|[\t]|[\n]/', ' ', trim($jsonLDDocSource));
+
         return $jsonLDDocSource;
     }
 }

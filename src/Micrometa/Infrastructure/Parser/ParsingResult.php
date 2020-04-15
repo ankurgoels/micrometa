@@ -65,6 +65,11 @@ class ParsingResult implements ParsingResultInterface
      */
     public function __construct($format, array $items)
     {
+        // Ignoring item which does not have type
+        $items = array_filter($items, function ($item) {
+            return !empty($item->type);
+        });
+
         $this->items = array_map(new ItemFactory($format), $items);
     }
 
