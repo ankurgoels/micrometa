@@ -1,4 +1,4 @@
-# jkphl/micrometa
+# ankurgoels/micrometa
 
 [![Build Status][travis-image]][travis-url] [![Coverage Status][coveralls-image]][coveralls-url] [![Scrutinizer Code Quality][scrutinizer-image]][scrutinizer-url] [![Code Climate][codeclimate-image]][codeclimate-url] [![Documentation Status][readthedocs-image]][readthedocs-url] [![Clear architecture][clear-architecture-image]][clear-architecture-url]
 
@@ -10,13 +10,13 @@ Please find the [project documentation](doc/index.md) in the `doc` directory. We
 
 ## Installation
 
-This library requires PHP >=5.6 or later. I recommend using the latest available version of PHP as a matter of principle. It has no userland dependencies. It's installable and autoloadable via [Composer](https://getcomposer.org/) as [jkphl/micrometa](https://packagist.org/packages/jkphl/micrometa).
+This library requires PHP >=5.6 or later. I recommend using the latest available version of PHP as a matter of principle. It has no userland dependencies. It's installable and autoloadable via [Composer](https://getcomposer.org/) as [ankurgoels/micrometa](https://packagist.org/packages/ankurgoels/micrometa).
         
 ```bash
-composer require jkphl/micrometa
+composer require ankurgoels/micrometa
 ```
 
-Alternatively, [download a release](https://github.com/jkphl/micrometa/releases) or clone this repository, then require or include its [`autoload.php`](autoload.php) file.
+Alternatively, [download a release](https://github.com/ankurgoels/micrometa/releases) or clone this repository, then require or include its [`autoload.php`](autoload.php) file.
 
 ## Dependencies
 
@@ -38,27 +38,29 @@ If you discover any security related issues, please email joschi@tollwerk.de ins
 
 ## Credits
 
-- [Joschi Kuphal][author-url]
+- [Joschi Kuphal][owner-url]
+- [Ankur Goel][author-url]
 - [All Contributors](../../contributors)
 
 ## License
 
-Copyright © 2017 [Joschi Kuphal][author-url] / joschi@tollwerk.de. Licensed under the terms of the [MIT license](LICENSE).
+Copyright © 2020 [Ankur Goel][author-url] / ankurgoel@live.in Licensed under the terms of the [MIT license](LICENSE).
 
 
-[travis-image]: https://secure.travis-ci.org/jkphl/micrometa.svg
-[travis-url]: https://travis-ci.org/jkphl/micrometa
+[travis-image]: https://travis-ci.com/ankurgoels/micrometa.svg
+[travis-url]: https://travis-ci.com/github/ankurgoels/micrometa
 [coveralls-image]: https://coveralls.io/repos/jkphl/micrometa/badge.svg?branch=master&service=github
 [coveralls-url]: https://coveralls.io/github/jkphl/micrometa?branch=master
 [scrutinizer-image]: https://scrutinizer-ci.com/g/jkphl/micrometa/badges/quality-score.png?b=master
-[scrutinizer-url]: https://scrutinizer-ci.com/g/jkphl/micrometa/?branch=master
+[scrutinizer-url]: https://scrutinizer-ci.com/g/ankurgoels/micrometa/build-status/master
 [codeclimate-image]: https://lima.codeclimate.com/github/jkphl/micrometa/badges/gpa.svg
 [codeclimate-url]: https://lima.codeclimate.com/github/jkphl/micrometa
 [readthedocs-image]: http://readthedocs.org/projects/jkphl-micrometa/badge/?version=latest
 [readthedocs-url]: http://jkphl-micrometa.readthedocs.io/en/latest/?badge=latest
 [clear-architecture-image]: https://img.shields.io/badge/Clear%20Architecture-%E2%9C%94-brightgreen.svg
 [clear-architecture-url]: https://github.com/jkphl/clear-architecture
-[author-url]: https://jkphl.is
+[owner-url]: https://jkphl.is
+[author-url]: https://github.com/ankurgoels
 [PSR-1]: https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-1-basic-coding-standard.md
 [PSR-2]: https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-2-coding-style-guide.md
 [PSR-4]: https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-4-autoloader.md
