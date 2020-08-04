@@ -70,7 +70,7 @@ class JsonLD extends AbstractParser
      *
      * @var string
      */
-    const JSON_COMMENT_PATTERN = '#(/\*([^*]|[\r\n]|(\*+([^*/]|[\r\n])))*\*+/)|([\s\t]//.*)|(^//.*)#';
+    const JSON_COMMENT_PATTERN = '#(/\*([^*]|[\r\n]|(\*+([^*/]|[\r\n])))*\*+/)#';
     /**
      * Vocabulary cache
      *
