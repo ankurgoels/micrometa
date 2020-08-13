@@ -388,9 +388,6 @@ class JsonLD extends AbstractParser
         // replacing multiple line break to single line break
         $jsonLDDocSource = preg_replace("/(<br>)+/","<br>", $jsonLDDocSource);
 
-        // replacing multiple qoutes with none
-        $jsonLDDocSource = preg_replace("/(\"){2,}/",'',$jsonLDDocSource);
-
         // Trim, replace tabs and extra spaces with single spaces
         $jsonLDDocSource = preg_replace('/[ ]{2,}|[\t]|[\n]/', ' ', trim($jsonLDDocSource));
 
