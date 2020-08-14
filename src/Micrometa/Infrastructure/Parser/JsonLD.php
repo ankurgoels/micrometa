@@ -408,6 +408,9 @@ class JsonLD extends AbstractParser
 
         // removing double qoutes from json value
         $jsonLDDocSource = preg_replace('/([^{,:\[])"(?![},:\]])/', "$1".'\''."$2" ,$jsonLDDocSource);
+		
+		// replacing \ (forward slash) with / (slash) from json value
+        $jsonLDDocSource = preg_replace('/([^{,:\[])\\\(?![},:\]])/', "$1".'/'."$2" ,$jsonLDDocSource);
 
         return $jsonLDDocSource;
     }
