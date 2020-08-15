@@ -390,7 +390,7 @@ class JsonLD extends AbstractParser
 
         // Trim, replace tabs and extra spaces with single spaces
         $jsonLDDocSource = preg_replace('/[ ]{2,}|[\t]|[\n]/', '', trim($jsonLDDocSource));
-        
+
         // removing spaces between ", "
         $jsonLDDocSource = preg_replace('/(\",\s+\")/', '","', $jsonLDDocSource);
 
@@ -407,10 +407,14 @@ class JsonLD extends AbstractParser
         $jsonLDDocSource = preg_replace('/\s+(}|\])/', '$1', $jsonLDDocSource);
 
         // removing double qoutes from json value
-        $jsonLDDocSource = preg_replace('/([^{,:\[])"(?![},:\]])/', "$1".'\''."$2" ,$jsonLDDocSource);
+        $jsonLDDocSource = preg_replace('/([^{,:\[\\\\])"(?![},:\]])/', "$1".'\''."$2" ,$jsonLDDocSource);
 		
-		// replacing \ (forward slash) with / (slash) from json value
-        $jsonLDDocSource = preg_replace('/([^{,:\[])\/+(?![},:\]])/', "$1".'/'."$2" ,$jsonLDDocSource);
+		// replacing double qoute with comma to a qoute
+        $jsonLDDocSource = preg_replace('/([^{,:\[\\\\])(",\s*)(?!")(?![},:\]])/', "$1".'\', '."$3" ,$jsonLDDocSource);
+
+        // replacing \ (forward slash) with / (slash) from json value
+        $jsonLDDocSource = preg_replace('/([^{,:])\/(?![},:])/', "$1".'/'."$2" ,$jsonLDDocSource);
+
 
         return $jsonLDDocSource;
     }
