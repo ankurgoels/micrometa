@@ -413,8 +413,7 @@ class JsonLD extends AbstractParser
         $jsonLDDocSource = preg_replace('/([^{,:\[\\\\])(",\s*)(?!")(?![},:\]])/', "$1".'\', '."$3" ,$jsonLDDocSource);
 
         // replacing \ (forward slash) with / (slash) from json value
-        $jsonLDDocSource = preg_replace('/([^{,:])\/(?![},:])/', "$1".'/'."$2" ,$jsonLDDocSource);
-
+        $jsonLDDocSource = preg_replace('/([^{,:])\s*\\\\\s*(?![},:])/', "$1".'/'."$2" ,$jsonLDDocSource);
 
         return $jsonLDDocSource;
     }
