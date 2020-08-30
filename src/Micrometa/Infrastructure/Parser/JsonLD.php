@@ -381,9 +381,12 @@ class JsonLD extends AbstractParser
         if (substr($jsonLDDocSource, -1) === ';') {
             $jsonLDDocSource = substr_replace($jsonLDDocSource, '', -1);
         }
-		
+
         // removing any attribute in tags
-        $jsonLDDocSource = preg_replace("/<([a-zA-Z]+)(>|.*?[^?]>)/","<$1>", $jsonLDDocSource);
+        $jsonLDDocSource = preg_replace("/<([a-zA-Z0-9]+)(>|.*?[^?]>)/","<$1>", $jsonLDDocSource);
+
+        // replacing newline character to
+        $jsonLDDocSource = str_replace(array("\\r\\n", "\\r", "\\n"), "<br>", $jsonLDDocSource);
 
         // replacing more than 2 line breaks to 2 line breaks
         $jsonLDDocSource = preg_replace("/(<br>){2,}/","<br><br>", $jsonLDDocSource);
@@ -408,7 +411,7 @@ class JsonLD extends AbstractParser
 
         // removing double qoutes from json value
         $jsonLDDocSource = preg_replace('/([^{,:\[\\\\])"(?![},:\]])/', "$1".'\''."$2" ,$jsonLDDocSource);
-		
+
 		// replacing double qoute with comma to a qoute
         $jsonLDDocSource = preg_replace('/([^{,:\[\\\\])(",\s*)(?!")(?![},:\]])/', "$1".'\', '."$3" ,$jsonLDDocSource);
 
