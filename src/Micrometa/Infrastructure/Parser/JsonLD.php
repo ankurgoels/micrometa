@@ -147,7 +147,7 @@ class JsonLD extends AbstractParser
 
         // If this is not a valid JSON document: Return
         if (!is_object($jsonLDDoc) && !is_array($jsonLDDoc)) {
-            $this->logger->warning('Skipping invalid JSON-LD document');
+            $this->logger->error('Skipping invalid JSON-LD document');
 
             return [];
         }
